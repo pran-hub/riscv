@@ -22,4 +22,3 @@ index 24466eb..031906e 100644
 +
  	/* release cpu */
  	rump_unschedule();
- 

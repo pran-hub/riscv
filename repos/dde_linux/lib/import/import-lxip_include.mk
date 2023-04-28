@@ -25,6 +25,14 @@ ifeq ($(filter-out $(SPECS),arm_64),)
   ARCH_SRC_INC_DIR += $(REP_DIR)/src/include/spec/arm_64
 endif # arm_v7
 
+##addded by me---------------
+
+ifeq ($(filter-out $(SPECS),riscv),)
+  ARCH_SRC_INC_DIR += $(REP_DIR)/src/include/spec/riscv
+endif # riscv
+
+## ------------------
+
 #
 # The order of include-search directories is important, we need to look into
 # 'contrib' before falling back to our custom 'lx_emul.h' header.

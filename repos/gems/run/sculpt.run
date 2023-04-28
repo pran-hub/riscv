@@ -12,11 +12,12 @@ proc sculpt_version { } { return "22.10" }
 
 proc assert_platform_supported { } {
 
-	if {[have_board pc]}          return
-	if {[have_board imx8q_evk]}   return
-	if {[have_board mnt_reform2]} return
-	if {[have_board linux]}       return
-	if {[have_board pinephone]}   return
+	if {[have_board pc]}          	return
+	if {[have_board imx8q_evk]}   	return
+	if {[have_board mnt_reform2]} 	return
+	if {[have_board linux]}       	return
+	if {[have_board pinephone]}   	return
+	if {[have_board virt_qemu_riscv]}	return
 
 	puts "Platform is unsupported.";
 	exit 0;
@@ -155,6 +156,7 @@ proc nic_drv { } {
 	if {[have_board pc]}          { return ipxe_nic_drv }
 	if {[have_board imx8q_evk]}   { return fec_nic_drv  }
 	if {[have_board mnt_reform2]} { return fec_nic_drv  }
+	if {[have_board virt_qemu_riscv]} { return virt_mmio_nic  }
 
 	return nic_unavailable
 }
